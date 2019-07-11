@@ -1,4 +1,4 @@
-# Heady
+# BookSlot
 
 A website for scheduling and reservation of meetings with people.
 
