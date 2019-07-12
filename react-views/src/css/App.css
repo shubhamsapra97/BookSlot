@@ -7,6 +7,88 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.header-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    background: rgb(138,43,226);  
+}
+
+.header-logo {
+    font-size: 45px;
+    color: white;
+}
+
+.header-title {
+    color: white;
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+.login-heading {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.login-form {
+    margin-top: 30px;
+}
+
+.login-submit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input[type="submit"]  {
+    display: inline;
+    border: 0;
+    background-color: lightgreen;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 10px 30px;
+    margin-left: 5px;
+    outline: none;
+    color: green;
+    border-radius: 24px; 
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.text-margin {
+    margin-top: 60px;
+}
+
+.text-margin-register {
+    margin-top: 40px;
+}
+
+.register-message, .forgot-pass-link {
+    color: grey;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.forgot-pass-link {
+    text-decoration: underline;
+}
+
+.register-link {
+    color: red;
+    margin-left: 6px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 .date-picker-col {
     height: 50px;
     line-height: 40px;
