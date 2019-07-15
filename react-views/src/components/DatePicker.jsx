@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
-import moment from 'moment'
+import moment from 'moment';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
+// For Date Navigation in Schedule
 class DatePicker extends Component {
     
     constructor(props) {
@@ -15,12 +16,14 @@ class DatePicker extends Component {
     
     componentDidMount() {
         
+        // set initial date as current
         this.setState({
             date: moment().format("Do MMMM YYYY")
         });
         
     }
     
+    // on next date arrow click
     addDay = () => {
         
         let nextDate = moment(this.state.date,"Do MMMM YYYY").add(1, 'days').format("Do MMMM YYYY");
@@ -28,74 +31,60 @@ class DatePicker extends Component {
             
             date: nextDate
             
+        },() => {
+            
+            this.props.filterBookedSlots(this.state.date);
+            
         });
         
     }
     
+    // on previous date arrow click
     subtractDay = () => {
         
-        let nextDate = moment(this.state.date,"Do MMMM YYYY").subtract(1, 'days').format("Do MMMM YYYY");
-        this.setState({
-            
-            date: nextDate
-            
-        });
+        let currentDate = moment();
+        let nextDate =  moment(this.state.date,"Do MMMM YYYY").subtract(1, 'days');
+        
+        // prevent user from navogating to past dates
+        if ((moment(nextDate).diff(moment(currentDate),'days')+1 > 0)) {
+    
+            nextDate = nextDate.format("Do MMMM YYYY");
+            this.setState({
+
+                date: nextDate
+
+            },() => {
+                
+                // on arrow click check for booked slots
+                this.props.filterBookedSlots(this.state.date);
+                
+            });
+        
+        }
         
     }
     
     render() {
         return (
-                <Container>
-                    <Row>
-                      <Col lg={{size:6, offset: 3}} sm={{size: 12,offset: 0}} xs={{size: 12,offset: 0}} 
+                    <Row className="datepicker-div">
+                      <Col lg={{size:6, offset: 3}} md={{size:8 ,offset: 2}} sm={{size: 10,offset: 1}} xs={{size: 10,offset: 1}} 
                           className="date-picker-col" >
                         
                           <Row>
                               <Col lg="2" sm="2" xs="2" className="text-left">
-                                  <span><FaArrowLeft onClick={this.subtractDay} /></span>
+                                  <span><FaArrowLeft className="date-navigators" onClick={this.subtractDay} /></span>
                               </Col>
                               <Col lg="8" sm="8" xs="8" className="date-picker-date text-center">{this.state.date}</Col>
                               <Col lg="2" sm="2" xs="2" className="text-right">
-                                  <span><FaArrowRight onClick={this.addDay} /></span>
+                                  <span><FaArrowRight className="date-navigators" onClick={this.addDay} /></span>
                               </Col>
                           </Row>
                         
                       </Col>
                     </Row>
-                </Container>
         );
     }
 
 }
-
-//Container.propTypes = {
-//  fluid:  PropTypes.bool
-//}
-//
-//Row.propTypes = {
-//  noGutters: PropTypes.bool,
-//  form: PropTypes.bool
-//}
-//
-//const stringOrNumberProp = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
-//const columnProps = PropTypes.oneOfType([
-//  PropTypes.string,
-//  PropTypes.number,
-//  PropTypes.bool,
-//  PropTypes.shape({
-//    size: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
-//    order: stringOrNumberProp,
-//    offset: stringOrNumberProp
-//  })
-//]);
-//
-//Col.propTypes = {
-//  xs: columnProps,
-//  sm: columnProps,
-//  md: columnProps,
-//  lg: columnProps,
-//  xl: columnProps,
-//  widths: PropTypes.array,
-//}
 
 export default DatePicker;

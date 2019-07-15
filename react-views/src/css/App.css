@@ -72,6 +72,10 @@ input[type="submit"]:hover {
     margin-top: 40px;
 }
 
+.text-margin-profile {
+    margin-top: 40px;
+}
+
 .register-message, .forgot-pass-link {
     color: grey;
     font-size: 16px;
@@ -100,3 +104,295 @@ input[type="submit"]:hover {
     font-size: 20px;
     font-weight: 600;
 }
+
+.profile-userName {
+    font-size: 25px;
+    font-weight: 500;
+    color: grey;
+}
+
+.profile-timezone {
+    color: #A0A0A0;
+}
+
+.profile-update-timezone {
+    padding-left: 15px;
+    color: #0080ff;
+}
+
+.profile-reservation-text {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 450;
+    text-decoration: underline;
+}
+
+.profile-reservation-row {
+    padding-top: 7px;
+}
+
+.profile-reservation-date {
+    margin-top: 20px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.profile-reservation-time {
+    color: grey;
+    font-size: 15px;
+}
+
+.profile-reservation-user {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.profile-reservation-delete {
+    color: red;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.schedule-heading {
+    color: #CCCCCC;
+    font-size: 14px;
+    margin-bottom: -5px;
+}
+
+.schedule-timezone {
+    font-size: 12px;
+    color: #CCCCCC;
+    padding-left: 10px;
+}
+
+.datepicker-div {
+    margin-top: 20px;
+}
+
+.schedule-time-div {
+    margin-top: 60px;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+
+.schedule-time {
+    border: 1px solid black;
+    border-radius: 3px;
+    text-align: center;
+    padding: 4px 0; 
+    margin-left: 80px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.disabled-schedule-time {
+    pointer-events: none;
+    border: 1px solid #CCC;
+    color: #CCC;
+}
+
+.schedule-time-selected {
+    border: 1px solid blue;
+    background: #4c4cff;
+    color: white;
+    opacity: 0.7;
+}
+
+.no-meetings-div {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.schedule-time:hover, .schedule-time-selected:hover, 
+.profile-reservation-delete:hover, .date-navigators {
+    cursor: pointer;
+}
+
+.book-slot-div {
+    justify-content: center;
+}
+
+.modalClass {
+    width: 70vw;
+    height: 150px;
+    padding-top : 0;
+}
+
+hr {
+    margin-top: 0px;
+}
+
+.modal-title {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.modal-text {
+    font-size: 18px;
+}
+
+.modal-button-div {
+    width: 100%;
+    text-align: right;
+}
+
+input[type="button"] {
+    width: 40px;
+    margin: 15px 0px 0px 10px;
+}
+
+.user-search-div {
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 990px) {
+    
+    .no-meetings-div {
+        padding-left: 100px;
+    }
+    
+}
+
+@media only screen and (max-width: 450px) {
+    .profile-reservation-text {
+        margin-top: 22px;
+        font-size: 16px;
+    }
+    .profile-reservation-time,.profile-reservation-user,.profile-reservation-delete {
+        font-size: 12px;
+    }
+    .profile-userName {
+        font-size: 23px;
+    }
+    .profile-timezone,.profile-update-timezone {
+        font-size: 14px;
+    }
+    .profile-update-timezone {
+        font-size: 14px;
+        padding-left: 11px;
+    }
+    .profile-reservation-date {
+        margin-top: 6px;
+        font-size: 17px;
+        font-weight: 400;
+    }
+    .text-margin-profile {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .schedule-time {
+        margin-left: 35px;
+        margin-top: 15px;
+        font-size: 12px;
+    }   
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+    .schedule-time {
+        margin-left: 45px;
+    }   
+}
+
+@media only screen and (min-width: 577px) and (max-width: 716px) {
+    .modalClass {
+        width: 95vw;
+        height: auto;
+    }
+    .modal-title {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .modal-text {
+        font-size: 15px;
+    }
+    .modal-close-button {
+        top: 2px;
+        width: 20px;
+        height: 20px;
+    }
+    .modal-button-div {
+        text-align: right;
+        font-size: 13px;
+    }   
+}
+
+@media only screen and (min-width: 370px) and (max-width: 576px) {
+    .schedule-time {
+        margin-left: 45px;
+    }   
+    .schedule-time-div {
+        margin-top: 30px;
+    }
+    .book-slot input[type="submit"]  {
+        padding: 6px 20px;
+    }
+    .modalClass {
+        width: 95vw;
+        height: auto;
+    }
+    .modal-title {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .modal-text {
+        font-size: 15px;
+    }
+    .modal-close-button {
+        top: 2px;
+        width: 20px;
+        height: 20px;
+    }
+    .modal-button-div {
+        text-align: right;
+        font-size: 13px;
+    }
+    .user-search-input {
+        height: 30px;
+        font-size: 15px;
+    }
+    .user-search-div {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .schedule-time-div {
+        margin-top: 20px;
+    }
+    .book-slot input[type="submit"]  {
+        padding: 6px 20px;
+    }
+    .modalClass {
+        width: 95vw;
+        height: auto;
+    }
+    .modal-title {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .modal-text {
+        font-size: 15px;
+    }
+    .modal-close-button {
+        top: 2px;
+        width: 20px;
+        height: 20px;
+    }
+    .modal-button-div {
+        text-align: right;
+        font-size: 13px;
+    }
+    .user-search-input {
+        height: 30px;
+        font-size: 15px;
+    }
+    .user-search-div {
+        margin-top: 10px;
+    }
+}
+

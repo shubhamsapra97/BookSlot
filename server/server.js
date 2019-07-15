@@ -11,7 +11,8 @@ mongoose.Promise = global.Promise;
 mongoose.set('useFindAndModify', false);
 
 //DB config
-let uri = 'mongodb://Shubham:Shubham1@ds241537.mlab.com:41537/heady';
+let uri = 'mongodb://shubham:shubham25@ds151876.mlab.com:51876/planguru';
+
 //connect to mongodb
 mongoose.connect(uri,
     { useNewUrlParser: true },
